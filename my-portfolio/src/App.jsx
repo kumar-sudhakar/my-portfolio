@@ -14,7 +14,7 @@ import Footer from "./sections/Footer";
 export default function App() {
   return (
     <div className="relative gradient text-white">
-      <ParticlesBackground />
+      <ParticlesBackground /> 
       <CustomCursor />
       <Navbar />
       <Home />
