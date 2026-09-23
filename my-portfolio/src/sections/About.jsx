@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Profile from "../assets/Profile.png";
-import ParticlesBackground from "../components/ParticlesBackground";
 
 const stats = [
   { label: "Experience", value: "1+ years" },
@@ -13,17 +12,69 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative min-h-screen overflow-hidden py-16 px-6 text-white flex items-center"
+      className="relative min-h-screen overflow-hidden py-16 px-6 text-white flex items-center bg-black"
     >
       {/* =====================================
-          ANIMATED PARTICLE BACKGROUND
+          NEON BACKGROUND
       ====================================== */}
-      <div className="absolute inset-0 z-0">
-        <ParticlesBackground />
-      </div>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none" />
+        {/* Left Neon Glow */}
+        <div
+          className="
+            absolute
+            top-1/4
+            -left-20
+            w-[350px]
+            h-[350px]
+            rounded-full
+            bg-gradient-to-r
+            from-[#302b63]
+            via-[#00bf8f]
+            to-[#1cd8d2]
+            opacity-20
+            blur-[120px]
+            animate-pulse
+          "
+        />
+
+        {/* Right Neon Glow */}
+        <div
+          className="
+            absolute
+            bottom-1/4
+            -right-20
+            w-[350px]
+            h-[350px]
+            rounded-full
+            bg-gradient-to-r
+            from-[#302b63]
+            via-[#00bf8f]
+            to-[#1cd8d2]
+            opacity-20
+            blur-[120px]
+            animate-pulse
+            delay-500
+          "
+        />
+
+        {/* Center subtle glow */}
+        <div
+          className="
+            absolute
+            top-1/2
+            left-1/2
+            -translate-x-1/2
+            -translate-y-1/2
+            w-[300px]
+            h-[300px]
+            rounded-full
+            bg-[#00bf8f]
+            opacity-5
+            blur-[150px]
+          "
+        />
+      </div>
 
       {/* =====================================
           MAIN CONTENT
@@ -39,6 +90,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
           className="flex flex-col md:flex-row items-center justify-center gap-8"
         >
+
           {/* =====================================
               PROFILE IMAGE
           ====================================== */}
@@ -46,13 +98,30 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            whileHover={{ scale: 1.03 }}
-            className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl overflow-hidden bg-neutral-800/70 flex-shrink-0 border border-neutral-700/50 shadow-lg"
+            whileHover={{
+              scale: 1.03,
+              boxShadow: "0 0 35px rgba(0, 191, 143, 0.25)",
+            }}
+            className="
+              relative
+              w-48
+              h-56
+              sm:w-56
+              sm:h-64
+              rounded-2xl
+              overflow-hidden
+              bg-neutral-900/70
+              backdrop-blur-md
+              flex-shrink-0
+              border
+              border-[#00bf8f]/30
+              shadow-[0_0_25px_rgba(0,191,143,0.12)]
+            "
           >
             <img
               src={Profile}
               alt="Sudhakar Kumar"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </motion.div>
 
@@ -66,7 +135,17 @@ export default function About() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl font-bold text-teal-400"
+              className="
+                text-3xl
+                sm:text-4xl
+                font-bold
+                bg-clip-text
+                text-transparent
+                bg-gradient-to-r
+                from-[#1cd8d2]
+                via-[#00bf8f]
+                to-[#302b63]
+              "
             >
               Sudhakar Kumar
             </motion.h1>
@@ -86,7 +165,13 @@ export default function About() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-2xl"
+              className="
+                text-neutral-400
+                text-sm
+                sm:text-base
+                leading-relaxed
+                max-w-2xl
+              "
             >
               I build scalable, modern applications with a strong focus on
               clean architecture, delightful UX, and performance. My toolkit
@@ -111,8 +196,19 @@ export default function About() {
                   whileHover={{
                     y: -5,
                     scale: 1.03,
+                    boxShadow: "0 0 20px rgba(0, 191, 143, 0.15)",
                   }}
-                  className="bg-neutral-900/70 backdrop-blur-md border border-neutral-800 rounded-xl p-3 sm:p-4 text-center"
+                  className="
+                    bg-neutral-900/70
+                    backdrop-blur-md
+                    border
+                    border-[#00bf8f]/20
+                    rounded-xl
+                    p-3
+                    sm:p-4
+                    text-center
+                    transition-all
+                  "
                 >
                   <p className="text-xs text-neutral-400">
                     {item.label}
@@ -134,12 +230,26 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start"
             >
-              {/* Projects */}
+              {/* View Projects */}
               <motion.a
                 href="#projects"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 25px rgba(0, 191, 143, 0.25)",
+                }}
                 whileTap={{ scale: 0.95 }}
-                className="px-5 py-2.5 rounded-lg bg-white text-black font-semibold text-sm hover:bg-neutral-200 transition"
+                className="
+                  px-5
+                  py-2.5
+                  rounded-lg
+                  bg-gradient-to-r
+                  from-[#1cd8d2]
+                  to-[#00bf8f]
+                  text-black
+                  font-semibold
+                  text-sm
+                  transition
+                "
               >
                 View Projects
               </motion.a>
@@ -147,9 +257,24 @@ export default function About() {
               {/* Contact */}
               <motion.a
                 href="#contact"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.05,
+                  borderColor: "rgba(0,191,143,0.6)",
+                  boxShadow: "0 0 20px rgba(0,191,143,0.15)",
+                }}
                 whileTap={{ scale: 0.95 }}
-                className="px-5 py-2.5 rounded-lg border border-neutral-700 bg-neutral-900/60 text-white font-medium text-sm hover:bg-neutral-800 transition"
+                className="
+                  px-5
+                  py-2.5
+                  rounded-lg
+                  border
+                  border-neutral-700
+                  bg-neutral-900/60
+                  text-white
+                  font-medium
+                  text-sm
+                  transition
+                "
               >
                 Get in Touch
               </motion.a>
@@ -165,9 +290,28 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-14 border-t border-neutral-800/80 pt-8 text-center"
+          className="
+            mt-14
+            border-t
+            border-[#00bf8f]/20
+            pt-8
+            text-center
+          "
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+          <h3
+            className="
+              text-2xl
+              sm:text-3xl
+              font-bold
+              mb-4
+              bg-clip-text
+              text-transparent
+              bg-gradient-to-r
+              from-[#1cd8d2]
+              via-[#00bf8f]
+              to-white
+            "
+          >
             About Me
           </h3>
 
