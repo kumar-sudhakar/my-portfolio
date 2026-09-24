@@ -6,7 +6,7 @@ const socials = [
   {
     icon: <FaXTwitter />,
     label: "X",
-    href: "https://x.com",
+      href: "https://x.com/Sudhakarku36854",
   },
   {
     icon: <FaLinkedinIn />,

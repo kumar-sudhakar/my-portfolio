@@ -52,21 +52,21 @@ export default function Projects() {
     {
       title: "Forever",
       description: "Modern e-commerce experience",
-      link: "",
+      link: "https://github.com/kumar-sudhakar/E-commerce-App",
       bgColor: "#0D4D3D",
       image: isMobile ? photo1 : img1,
     },
     {
       title: "QuickChat",
       description: "Real-time communication platform",
-      link: "",
+      link: "https://github.com/kumar-sudhakar/Chat-App",
       bgColor: "#071426",
       image: isMobile ? photo2 : img2,
     },
     {
       title: "AI Code Reviewer",
       description: "AI-powered code analysis tool",
-      link: "",
+      link: "https://github.com/kumar-sudhakar/Ai-Code-Reviewer",
       bgColor: "#1D0D4D",
       image: isMobile ? photo3 : img3,
     },
@@ -183,45 +183,50 @@ export default function Projects() {
                   {activeProject.description}
                 </p>
 
-                {/* Image */}
-                <motion.div
-                  whileHover={!isMobile ? { scale: 1.015 } : {}}
-                  transition={{ duration: 0.35 }}
-                  className="
-                    relative
-                    mt-4
-                    sm:mt-5
-                    w-[90%]
-                    sm:w-[84%]
-                    md:w-[78%]
-                    lg:w-[72%]
-                    h-[38vh]
-                    sm:h-[41vh]
-                    md:h-[44vh]
-                    lg:h-[45vh]
-                    overflow-hidden
-                    rounded-xl
-                    sm:rounded-2xl
-                    shadow-[0_25px_70px_rgba(0,0,0,0.5)]
-                  "
-                >
-                  <motion.img
-                    src={activeProject.image}
-                    alt={activeProject.title}
-                    loading="lazy"
-                    initial={{ scale: 1.05 }}
-                    animate={{ scale: 1 }}
-                    transition={{
-                      duration: 0.7,
-                      ease: "easeOut",
-                    }}
-                    className="w-full h-full object-cover"
-                  />
+{/* Image */}
+<motion.div
+  whileHover={!isMobile ? { scale: 1.015 } : {}}
+  transition={{ duration: 0.35 }}
+  className="
+    relative
+    mt-4
+    sm:mt-5
+    w-[88%]
+    sm:w-[82%]
+    md:w-[76%]
+    lg:w-[68%]
+    flex
+    items-center
+    justify-center
+  "
+>
+  <motion.img
+    src={activeProject.image}
+    alt={activeProject.title}
+    loading="lazy"
+    initial={{ scale: 1.05 }}
+    animate={{ scale: 1 }}
+    transition={{
+      duration: 0.7,
+      ease: "easeOut",
+    }}
+    className="
+      w-full
+      h-auto
+      max-h-[32vh]
+      sm:max-h-[42vh]
+      md:max-h-[44vh]
+      lg:max-h-[46vh]
+      object-contain
+      rounded-xl
+      sm:rounded-2xl
+      shadow-[0_25px_70px_rgba(0,0,0,0.5)]
+    "
+  />
 
-                  {/* Image Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10 pointer-events-none" />
-                </motion.div>
-
+  {/* Image Overlay */}
+  <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-t from-black/25 via-transparent to-black/10 pointer-events-none" />
+</motion.div>
                 {/* Button */}
                 <motion.a
                   href={activeProject.link}

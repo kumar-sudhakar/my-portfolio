@@ -5,21 +5,21 @@ const experiences = [
   {
     role: "Web Developer",
     company: "AICTE",
-    duration: "2025",
+    duration: "2026 Jan - March",
     description:
       "Built high-performance apps, integrated AI features, improved engagement by 10%.",
   },
   {
     role: "Frontend Developer",
     company: "InternSpark",
-    duration: "2025",
+    duration: "2026 March - April",
     description:
       "Developed responsive web applications, collaborated with cross-functional teams.",
   },
   {
     role: "Full Stack Engineer",
     company: "Free Lancing",
-    duration: "Current",
+    duration: "2026 April - Current",
     description:
       "Engineered end-to-end full-stack architectures and microservices.",
   },

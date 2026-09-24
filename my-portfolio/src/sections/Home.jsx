@@ -39,7 +39,7 @@ export default function Home() {
     {
       icon: <FaXTwitter />,
       label: "X",
-      href: "https://x.com/",
+      href: "https://x.com/Sudhakarku36854",
     },
     {
       icon: <FaLinkedinIn />,
@@ -97,15 +97,17 @@ export default function Home() {
 
       {/* Main Content Grid */}
       <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2">
-        {/* Left Column (Text Content) */}
+
+        {/* Left Column */}
         <div className="flex flex-col justify-center h-full text-center lg:text-left relative">
           <div className="w-full lg:pr-24 mx-auto max-w-[48rem]">
+
             {/* Typewriter Role */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white tracking-wide min-h-[1.6em]"
+              className="mb-3 text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white tracking-wide min-h-[1.6em]"
             >
               <span>{roles[index].substring(0, subIndex)}</span>
               <span className="inline-block w-[2px] h-[1em] ml-1 bg-white animate-pulse align-middle" />
@@ -116,10 +118,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] drop-shadow-lg"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] drop-shadow-lg"
             >
               Hello, I'm <br />
-              <span className="text-white font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl lg:whitespace-nowrap">
+
+              <span className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl lg:whitespace-nowrap">
                 Sudhakar Kumar
               </span>
             </motion.h1>
@@ -129,11 +132,11 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto lg:mx-0"
+              className="mt-5 text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
             >
-              I transform complex ideas into seamless, high-impact digital experiences, building modern, scalable, and high-performance web applications that deliver
-              meaningful results.
-
+              I transform complex ideas into seamless, high-impact digital
+              experiences, building modern, scalable, and high-performance web
+              applications that deliver meaningful results.
             </motion.p>
 
             {/* Action Buttons */}
@@ -141,25 +144,26 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6"
+              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-5"
             >
               <a
                 href="#projects"
-                className="px-6 py-3 rounded-full font-medium text-lg text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-all"
+                className="px-5 py-2.5 rounded-full font-medium text-base text-white bg-gradient-to-r from-[#1cd8d2] via-[#00bf8f] to-[#302b63] shadow-lg hover:scale-105 transition-all"
               >
                 View My Work
               </a>
+
               <a
                 href="/Resume.pdf"
                 download
-                className="px-6 py-3 rounded-full font-medium text-lg text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
+                className="px-5 py-2.5 rounded-full font-medium text-base text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
               >
                 My Resume
               </a>
             </motion.div>
 
             {/* Social Icons */}
-            <div className="mt-10 flex gap-5 text-2xl md:text-3xl justify-center lg:justify-start">
+            <div className="mt-8 flex gap-5 text-xl md:text-2xl justify-center lg:justify-start">
               {socials.map(({ icon, label, href }) => (
                 <motion.a
                   key={label}
@@ -180,8 +184,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Right Column (Avatar Image & Radial Glow) */}
+        {/* Right Column */}
         <div className="relative hidden lg:block">
+
           {/* Avatar Behind Glow */}
           <div
             className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
@@ -200,7 +205,7 @@ export default function Home() {
           {/* Avatar Image */}
           <motion.img
             src={avatar}
-            alt="Gaurav Gupta"
+            alt="Sudhakar Kumar"
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
